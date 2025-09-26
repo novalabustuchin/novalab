@@ -313,8 +313,6 @@ button:focus, a:focus {
     
   }
   .simple-footer img{
-  max-width: 70%;
-  position: relative;
-  max-height: 30px;
+
   }
 }
