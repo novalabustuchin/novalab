@@ -1,0 +1,320 @@
+/* ---------------- VARIABILE ---------------- */
+/* 
+   Aici definim "culori și valori standard" pe care le putem folosi mai jos.
+   Dacă vrem să schimbăm tema site-ului, schimbăm doar aici valorile.
+*/
+:root {
+  --accent: #0b74de;    /* culoarea principală (albastru) */
+  --bg: #f4f6fa;        /* fundal general */
+  --card: #ffffff;      /* fundal pentru carduri (alb) */
+  --text: #222;         /* culoarea textului */
+  --muted: #555;        /* text mai estompat (gri) */
+  --radius: 14px;       /* rotunjire colțuri */
+  --gap: 22px;          /* spațiere între elemente */
+}
+
+/* Reset mic pentru margini și spațiere */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Font, culori și fundal pentru toată pagina */
+body {
+  font-family: "Inter", system-ui, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.nav {
+  position: sticky;              /* navbar-ul rămâne lipit sus când derulăm */
+  top: 0;
+  z-index: 100;                  /* apare deasupra altor elemente */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  background: rgba(255, 255, 255, 0.8);  /* fundal alb semi-transparent */
+  backdrop-filter: blur(8px);            /* efect de blur */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.brand {
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 14px;                     /* spațiere între linkuri */
+}
+
+.nav-links a {
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.25s;             /* mică animație la hover */
+}
+
+.nav-links a:hover {
+  background: rgba(11, 116, 222, 0.08); /* fundal albastru transparent */
+}
+
+.nav-links a.active {
+  background: var(--accent);     /* linkul selectat devine albastru plin */
+  color: #fff;
+}
+
+/* Buton burger pentru mobil (3 liniuțe) */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 24px;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Pe ecrane mici (sub 800px) ascundem linkurile și arătăm burger menu */
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--card);
+    padding: 12px;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+  .nav-links.open {               /* clasa "open" face linkurile vizibile */
+    display: flex;
+  }
+  .burger {
+    display: flex;
+  }
+}
+
+/* ---------------- PAGINI ---------------- */
+.wrap {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 0 18px;
+}
+
+.viewer {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(12, 20, 40, 0.08);
+  overflow: hidden;
+}
+
+/* Toate paginile sunt puse una lângă alta orizontal (ca un carusel) */
+.pages {
+  display: flex;
+  transition: transform 320ms ease;  /* animație la schimbare */
+  touch-action: pan-y;              /* permite swipe pe mobil */
+}
+
+.page {
+  min-width: 100%;                  /* fiecare pagină ocupă lățimea ecranului */
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------- CARD ECHIPĂ ---------------- */
+.team {
+  display: grid;
+  grid-template-columns: 220px 1fr; /* poză stânga, text dreapta */
+  align-items: center;
+  gap: var(--gap);
+  max-width: 950px;
+}
+
+.team img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(12, 20, 40, 0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: enter 0.7s forwards;   /* imaginea apare cu animație */
+}
+
+@keyframes enter {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Titlu echipă */
+.content h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+/* Descriere echipă */
+p.desc {
+  margin: 0;
+  color: var(--muted);
+  max-height: 56px;        /* se vede doar un mic fragment */
+  overflow: hidden;        /* restul textului e ascuns */
+  transition: max-height 320ms ease;
+}
+
+p.desc.expanded {
+  max-height: 600px;       /* când dăm click pe "Citește mai mult", textul se mărește */
+}
+
+/* Buton pentru "citește mai mult" */
+.btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #095eb5;
+}
+
+/* ---------------- CONTROALE ---------------- */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 0;
+}
+
+.controls button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.controls button:hover {
+  background: rgba(11, 116, 222, 0.08);
+}
+
+/* ---------------- BULINE (DOTS) ---------------- */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dot.active {
+  background: var(--accent);
+  transform: scale(1.2);   /* bulina activă devine mai mare */
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 720px) {
+  .team {
+    grid-template-columns: 1fr; /* imaginea trece deasupra textului */
+    text-align: center;
+  }
+  .team img {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .content {
+    text-align: center;
+  }
+  
+
+}
+
+/* ---------------- PROVOCĂRI ---------------- */
+.challenges {
+  padding: 18px;
+  margin: 22px auto;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.challenges h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.challenges ol {
+  padding-left: 20px;
+}
+
+.challenges li {
+  margin: 6px 0;
+  color: var(--muted);
+}
+
+/* ---------------- ACCESIBILITATE ---------------- */
+button:focus, a:focus {
+  outline: 3px solid rgba(11, 116, 222, 0.16);
+  outline-offset: 2px;
+}
+
+
+
+
+
+
+
+
+/* footer */
+.simple-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 65px;             /* înălțimea footer-ului */
+  display: flex;              /* pentru a centra textul */
+  align-items: center;        /* vertical centrat */
+  justify-content: center;    /* orizontal centrat */
+  color: white;               /* textul să fie vizibil pe imagine */
+  font-size: 14px;
+}
+.simple-footer img{
+  min-width: fit-content;
+  max-height: 65px;
+}
+
+@media (max-width: 720px){
+   footer{
+    
+  }
+  .simple-footer img{
+  max-width: 70%;
+  position: relative;
+  max-height: 30px;
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVA LAB Bustuchin</title>
+  
+  <!-- Aducem un font modern de pe Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+  <!-- Legăm fișierul nostru de CSS -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Legăm fișierul de JavaScript, cu "defer" ca să pornească după ce pagina s-a încărcat -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- ----------------- Bara de navigare (Navbar) ----------------- -->
+  <nav class="nav">
+    <!-- Numele proiectului -->
+    <div class="brand">🚀 NOVA LAB Bustuchin</div>
+    
+    <!-- Linkuri pentru echipe. La început mergem pe Echipa 1 -->
+    <div class="nav-links" id="navLinks">
+      <a href="#" data-index="0" class="active">Echipa 1</a>
+      <a href="#" data-index="1">Echipa 2</a>
+      <a href="#" data-index="2">Echipa 3</a>
+    </div>
+    
+    <!-- Buton pentru meniul de pe mobil (cele 3 liniuțe = burger menu) -->
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ----------------- Conținut principal ----------------- -->
+  <main class="wrap">
+    <div class="viewer">
+      
+      <!-- Aici punem toate paginile (echipele). Ele vor putea fi schimbate prin swipe sau butoane -->
+      <div class="pages" id="pages">
+
+        <!-- ----------------- Echipa 1 ----------------- -->
+        <section class="page" data-index="0">
+          <div class="team">
+            <!-- Imaginea echipei (o puteți înlocui cu PNG propriu) -->
+            <img src="img/team-1.png" alt="Matei si Alex" />
+            
+            <!-- Textul echipei -->
+            <div class="content">
+              <h2>Echipa 1 — Matei & Alex</h2>
+              <!-- Paragraful descrierei. Inițial se vede scurtat, apoi putem apăsa butonul -->
+              <p class="desc">Team 1
+
+              </p>
+              <!-- Buton pentru "citește mai mult" -->
+              <button class="btn toggle" type="button" aria-expanded="false">Citește mai mult</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ----------------- Echipa 2 ----------------- -->
+        <section class="page" data-index="1">
+          <div class="team">
+            <img src="team2.png" alt="Mihai si Raluca" />
+            <div class="content">
+              <h2>Echipa 2 — Mihai & Raluca</h2>
+              <p class="desc">Team 2
+                
+              </p>
+              <button class="btn toggle" type="button" aria-expanded="false">Citește mai mult</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ----------------- Echipa 3 ----------------- -->
+        <section class="page" data-index="2">
+          <div class="team">
+            <img src="team3.png" alt="Madalin si Edi" />
+            <div class="content">
+              <h2>Echipa 3 — Madalin & Edi</h2>
+              <p class="desc">
+                Team 3
+              </p>
+              <button class="btn toggle" type="button" aria-expanded="false">Citește mai mult</button>
+            </div>
+          </div>
+        </section>
+
+      </div> <!-- end pages -->
+
+      <!-- ----------------- Butoane navigare stânga/dreapta ----------------- -->
+      <div class="controls">
+        <button id="prev">⬅️ Prev</button>
+        <button id="next">Next ➡️</button>
+      </div>
+
+      <!-- ----------------- Puncte (dots) pentru navigare ----------------- -->
+      <div id="dots" class="dots"></div>
+
+      <!-- ----------------- Provocări pentru elevi ----------------- -->
+      <div class="challenges">
+        <h3>Provocări pentru 2 ore</h3>
+        <ol>
+          <li>Personalizați butonul (culori, efect hover).</li>
+          <li>Înlocuiți imaginea cu un PNG propriu.</li>
+          <li>Extindeți textul cu o poveste de 3–5 propoziții.</li>
+          <li>Adăugați o animație CSS la apariția imaginii.</li>
+          <li>Adăugați în navbar o pagină „we are NovaLab”.</li>
+          <li>Asigurati incadrarea corecta a imaginii din footer pe mobile</li>
+        </ol>
+      </div>
+
+    </div>
+  </main>
+  <!-- HTML -->
+<footer class="simple-footer">
+  <img src="img/wearenovalab.png" alt="">
+</footer>
+
+</body>
+</html>
