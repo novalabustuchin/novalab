@@ -168,3 +168,28 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollToSection(teamSection);
   });
 });
+
+function updateClock() {
+  const now = new Date();
+  const hour = now.getHours() % 12;
+  const minute = now.getMinutes();
+  const second = now.getSeconds();
+
+  // calcule unghiuri
+  const hourDeg = (hour + minute / 60) * 30; // 360 / 12
+  const minuteDeg = (minute + second / 60) * 6; // 360 / 60
+  const secondDeg = second * 6;
+
+  // selectăm limbile
+  document.querySelector('.hour-hand').style.transform = `rotate(${hourDeg}deg)`;
+  document.querySelector('.minute-hand').style.transform = `rotate(${minuteDeg}deg)`;
+  document.querySelector('.second-hand').style.transform = `rotate(${secondDeg}deg)`;
+
+  // digital
+  const digital = document.querySelector('.digital-time');
+  digital.textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+}
+
+// update la fiecare secundă
+setInterval(updateClock, 1000);
+updateClock();

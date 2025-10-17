@@ -12,6 +12,7 @@ header.hero {
   height: 100vh; /* ocupă tot ecranul */
   background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -170,6 +171,11 @@ header.hero {
         height: 50px;
         font-size: 1.5rem;
       }
+      .hero-content h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      animation: slideDown 1.2s ease;
+    }
     }
 
     /* ==========================================
@@ -579,7 +585,7 @@ footer {
 ======================================= */
 .floating-contact {
   position: fixed;
-  bottom: 25px;
+  top: 25px;
   right: 25px;
   display: flex;
   flex-direction: column;
@@ -669,6 +675,67 @@ footer {
 }
 
 
+.tech-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  color: #0ff;
+  margin: 50px auto;
+}
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 4px solid #0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+  position: absolute;
+  bottom: 50%;
+  width: 2px;
+  background: #0ff;
+  transform-origin: bottom center;
+  border-radius: 2px;
+}
+
+.hour-hand {
+  height: 40px;
+  background: linear-gradient(to top, #0ff, #00f);
+}
+
+.minute-hand {
+  height: 60px;
+  background: linear-gradient(to top, #0ff, #0f0);
+}
+
+.second-hand {
+  height: 80px;
+  background: linear-gradient(to top, #f00, #ff0);
+}
+
+.center-dot {
+  width: 10px;
+  height: 10px;
+  background: #0ff;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.digital-time {
+  margin-top: 20px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
 
 
 
