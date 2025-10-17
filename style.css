@@ -66,12 +66,15 @@ header.hero {
     .hero-content {
       position: relative;
       z-index: 2;
+      display: flex;
+      flex-direction: column;
     }
 
     .hero-content h1 {
       font-size: 3.5rem;
       letter-spacing: 2px;
       animation: slideDown 1.2s ease;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     .hero-content p {
@@ -80,7 +83,7 @@ header.hero {
     }
 
     button {
-      padding: 0.8rem 1.6rem;
+      padding: 0.8rem .1rem;
       font-size: 1rem;
       border: none;
       border-radius: 30px;
@@ -88,6 +91,9 @@ header.hero {
       color: white;
       cursor: pointer;
       transition: 0.3s;
+      text-transform: uppercase;
+      text-decoration: solid;
+      margin-top: 3px;
     }
 
     button:hover {
