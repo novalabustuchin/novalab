@@ -43,7 +43,7 @@ const exploreBtn = document.getElementById('exploreBtn');
 
 // Buton de închidere
 const closeAboutBtn = document.createElement('button');
-closeAboutBtn.textContent = 'Închide secțiunea';
+closeAboutBtn.textContent = 'Înapoi';
 closeAboutBtn.className = 'close-about';
 aboutSection.appendChild(closeAboutBtn);
 
@@ -82,7 +82,7 @@ const teamBtn = document.getElementById('teamBtn');
 let closeTeamBtn = teamSection.querySelector('.close-team');
 if (!closeTeamBtn) {
   closeTeamBtn = document.createElement('button');
-  closeTeamBtn.textContent = 'Închide secțiunea';
+  closeTeamBtn.textContent = 'Înapoi';
   closeTeamBtn.className = 'close-team';
   teamSection.appendChild(closeTeamBtn);
 }
@@ -133,17 +133,38 @@ document.addEventListener('DOMContentLoaded', () => {
   // Blocăm scroll-ul la încărcare
   body.classList.add('hero-active');
 
-  // La click pe oricare buton din hero
-  const heroButtons = hero.querySelectorAll('button');
-  heroButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Deblocăm scroll-ul și facem hero relativ
+  // Butoanele din hero
+  const exploreBtn = document.getElementById('exploreBtn');
+  const exerciseBtn = document.getElementById('exerciseBtn');
+  const teamBtn = document.getElementById('teamBtn');
+
+  // Funcție comună pentru scroll și vizibilitate
+  function scrollToSection(section) {
+    // Deblocăm scroll-ul dacă e blocat
+    if (body.classList.contains('hero-active')) {
       body.classList.remove('hero-active');
       hero.style.position = 'relative';
-    });
+    }
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      section.classList.add('visible'); // aplicăm efectul fade/scale
+    }
+  }
+
+  // Legăm fiecare buton de secțiunea corespunzătoare
+  exploreBtn.addEventListener('click', () => {
+    const aboutSection = document.querySelector('.about');
+    scrollToSection(aboutSection);
+  });
+
+  exerciseBtn.addEventListener('click', () => {
+    const exerciseSection = document.querySelector('.exercises');
+    scrollToSection(exerciseSection);
+  });
+
+  teamBtn.addEventListener('click', () => {
+    const teamSection = document.querySelector('.team');
+    scrollToSection(teamSection);
   });
 });
-
-
-
-//Matei
