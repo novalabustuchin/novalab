@@ -3,122 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NOVA LAB Bustuchin</title>
-  
-  <!-- Aducem un font modern de pe Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-
-  <!-- Legăm fișierul nostru de CSS -->
+  <title>Nova Lab Bustuchin</title>
   <link rel="stylesheet" href="style.css" />
-  
-  <!-- Legăm fișierul de JavaScript, cu "defer" ca să pornească după ce pagina s-a încărcat -->
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- ----------------- Bara de navigare (Navbar) ----------------- -->
-  <nav class="nav">
-    <!-- Numele proiectului -->
-    <div class="brand">🚀 NOVA LAB Bustuchin</div>
-    
-    <!-- Linkuri pentru echipe. La început mergem pe Echipa 1 -->
-    <div class="nav-links" id="navLinks">
-      <a href="#" data-index="0" class="active">Echipa 1</a>
-      <a href="#" data-index="1">Echipa 2</a>
-      <a href="#" data-index="2">Echipa 3</a>
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Nova Lab Bustuchin</h1>
+      <p>Inovație. Tehnologie. Creativitate.</p>
+      <button id="exploreBtn">Explorează</button>
+      <button id="exerciseBtn">Exerciții</button>
     </div>
-    
-    <!-- Buton pentru meniul de pe mobil (cele 3 liniuțe = burger menu) -->
-    <div class="burger" id="burger">
-      <span></span><span></span><span></span>
+  </header>
+
+  <section class="about fade-section">
+  <h2>Despre Proiect</h2>
+  <p>
+    Nova Lab Bustuchin este o inițiativă creată pentru a încuraja
+    tinerii să exploreze tehnologia, designul și inovația. Scopul
+    proiectului este de a transforma ideile în realitate prin artă
+    digitală, 3D, robotică și inteligență artificială.
+  </p>
+  <p>
+    Acest proiect a prins viață din dorința elevilor pasionați de
+    domeniul digital de a avea un spațiu modern unde să își poată
+    exprima creativitatea și să învețe prin practică. Cu sprijinul
+    <strong>Primăriei Comunei Bustuchin</strong> și al
+    <strong>Liceului Tehnologic Bustuchin</strong>, Nova Lab s-a
+    transformat într-un loc de dezvoltare și colaborare, unde ideile
+    devin proiecte concrete.
+  </p>
+  <p>
+    Inițiativa a fost susținută prin voluntariat de către bibliotecarul
+    <strong>Glăvan Gheorghe Mădălin</strong>, care, în calitate de
+    îndrumător și mentor, a pus bazele unui spațiu educațional deschis,
+    oferind tinerilor motivația și resursele necesare pentru a-și urma
+    pasiunile în domeniul tehnologic.
+  </p>
+</section>
+<!-- Sectiunea EXERCITII -->
+    <section class="exercises fade-section">
+      <h2>🧠 Exerciții pentru tinerii exploratori</h2>
+      <p class="time-limit">⏱️ Timp de lucru: 2 ore</p>
+
+      <ol>
+       <li>
+  În secțiunea <strong>„Echipa Nova Lab”</strong>, personalizează-ți cardul propriu
+  (Cursant 1, 2, 3, etc.) adăugând:
+  <ul>
+    <li>Fotografia ta (păstrând forma pătrată a imaginii)</li>
+    <li>Numele complet</li>
+    <li>Ocupatia sau pasiunea ta</li>
+    <li>O scurtă descriere despre tine</li>
+  </ul>
+  Stilizează cardul tău în CSS, folosind culori, borduri, umbre și fonturi diferite!
+</li>
+
+      </ol>
+
+      <p class="note">
+        💡 *Sfat:* Fiți creativi! Puteți folosi culori, forme și animații care vă reprezintă.
+      </p>
+
+      <button class="close-exercises">Închide Exercițiile</button>
+    </section>
+
+  <section class="gallery fade-section">
+    <h2>Galerie Vizuală</h2>
+    <div class="grid">
+      <div class="card">🎨 Design</div>
+      <div class="card">🤖 Robotică</div>
+      <div class="card">💻 Web</div>
+      <div class="card">🚀 Inovație</div>
     </div>
-  </nav>
+  </section>
+  <!-- SECTIUNEA ECHIPA -->
+<section class="team fade-section">
+  <h2>👩‍🚀 Echipa NOVA LAB Bustuchin</h2>
+  <p class="team-intro">
+    O echipă formată din tineri pasionați de tehnologie și inovație,
+    coordonați de mentorul lor dedicat.
+  </p>
 
-  <!-- ----------------- Conținut principal ----------------- -->
-  <main class="wrap">
-    <div class="viewer">
-      
-      <!-- Aici punem toate paginile (echipele). Ele vor putea fi schimbate prin swipe sau butoane -->
-      <div class="pages" id="pages">
-
-        <!-- ----------------- Echipa 1 ----------------- -->
-        <section class="page" data-index="0">
-          <div class="team">
-            <!-- Imaginea echipei (o puteți înlocui cu PNG propriu) -->
-            <img src="img/team-1.png" alt="Matei si Alex" />
-            
-            <!-- Textul echipei -->
-            <div class="content">
-              <h2>Echipa 1 — Matei & Alex</h2>
-              <!-- Paragraful descrierei. Inițial se vede scurtat, apoi putem apăsa butonul -->
-              <p class="desc">Team 1
-
-              </p>
-              <!-- Buton pentru "citește mai mult" -->
-              <button class="btn toggle" type="button" aria-expanded="false">Citește mai mult</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- ----------------- Echipa 2 ----------------- -->
-        <section class="page" data-index="1">
-          <div class="team">
-            <img src="team2.png" alt="Mihai si Raluca" />
-            <div class="content">
-              <h2>Echipa 2 — Mihai & Raluca</h2>
-              <p class="desc">Team 2
-                
-              </p>
-              <button class="btn toggle" type="button" aria-expanded="false">Citește mai mult</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- ----------------- Echipa 3 ----------------- -->
-        <section class="page" data-index="2">
-          <div class="team">
-            <img src="team3.png" alt="Madalin si Edi" />
-            <div class="content">
-              <h2>Echipa 3 — Madalin & Edi</h2>
-              <p class="desc">
-                Team 3
-              </p>
-              <button class="btn toggle" type="button" aria-expanded="false">Citește mai mult</button>
-            </div>
-          </div>
-        </section>
-
-      </div> <!-- end pages -->
-
-      <!-- ----------------- Butoane navigare stânga/dreapta ----------------- -->
-      <div class="controls">
-        <button id="prev">⬅️ Prev</button>
-        <button id="next">Next ➡️</button>
-      </div>
-
-      <!-- ----------------- Puncte (dots) pentru navigare ----------------- -->
-      <div id="dots" class="dots"></div>
-
-      <!-- ----------------- Provocări pentru elevi ----------------- -->
-      <div class="challenges">
-        <h3>Provocări pentru 2 ore</h3>
-        <ol>
-          <li>Asezati Bustuchin sub Nova LaB din div-ul brand</li>
-          <li>Personalizați butonul (culori, efect hover).</li>
-          <li>Înlocuiți imaginea cu un PNG propriu.</li>
-          <li>Extindeți textul cu o poveste de 3–5 propoziții.</li>
-          <li>Adăugați o animație CSS la apariția imaginii.</li>
-          <li>Adăugați în navbar o pagină „we are NovaLab”.</li>
-          <li>Asigurati incadrarea corecta a imaginii din footer pe mobile</li>
-        </ol>
-      </div>
+  <div class="team-grid">
+    <!-- MENTOR -->
+    <div class="member mentor">
+      <img src="img/madalin glavan.jpg" alt="Mentor" />
+      <h3>Mădălin Glăvan</h3>
+      <p class="role">Mentor & Bibliotecar</p>
+      <p class="desc">
+  Coordonator al proiectului Nova Lab Bustuchin, dedicat promovării educației digitale, creativității și spiritului de echipă în rândul elevilor. 
+  Dorința mea este să deschid noi drumuri pentru fiecare tânăr, să le ofer o perspectivă largă asupra modului în care funcționează lumea digitală 
+  și să îi inspir să exploreze tehnologia, designul și inovația. Îmi propun să îi ghidez nu doar în învățare, ci și către posibilități reale 
+  de cariere profesionale, transformând ideile lor în proiecte concrete și experiențe practice.
+</p>
 
     </div>
-  </main>
-  <!-- HTML -->
-<footer class="simple-footer">
-  <img src="img/wearenovalab.png" alt="">
-</footer>
 
+    <!-- CURSANȚI -->
+    <div class="member">
+      <img src="images/cursant1.jpg" alt="Cursant 1" />
+      <h3>Cursant 1</h3>
+      <p class="role">Elev</p>
+      <p class="desc">
+        [Completează aici cu o descriere scurtă despre tine, pasiunile tale și ce te inspiră.]
+      </p>
+    </div>
+
+    <div class="member">
+      <img src="images/cursant2.jpg" alt="Cursant 2" />
+      <h3>Cursant 2</h3>
+      <p class="role">Elev</p>
+      <p class="desc">[Spațiu pentru prezentare personală]</p>
+    </div>
+
+    <div class="member">
+      <img src="images/cursant3.jpg" alt="Cursant 3" />
+      <h3>Cursant 3</h3>
+      <p class="role">Elev</p>
+      <p class="desc">[Spațiu pentru prezentare personală]</p>
+    </div>
+
+    <div class="member">
+      <img src="images/cursant4.jpg" alt="Cursant 4" />
+      <h3>Cursant 4</h3>
+      <p class="role">Elev</p>
+      <p class="desc">[Spațiu pentru prezentare personală]</p>
+    </div>
+
+    <div class="member">
+      <img src="images/cursant5.jpg" alt="Cursant 5" />
+      <h3>Cursant 5</h3>
+      <p class="role">Elev</p>
+      <p class="desc">[Spațiu pentru prezentare personală]</p>
+    </div>
+  </div>
+</section>
+
+
+  <section class="contact fade-section">
+  <h2>Contact</h2>
+  <p>Scrie-ne sau sună-ne pentru colaborări sau înscrieri la cursuri:</p>
+
+  
+  <!-- Buton Telefon apelabil -->
+  <a href="tel:+40771083833">
+    <button>📞 Sună acum</button>
+  </a>
+
+  <!-- Buton WhatsApp -->
+  <a href="https://wa.me/40771083833" target="_blank">
+    <button>💬 WhatsApp</button>
+  </a>
+</section>
+
+
+  <footer>
+    <p>© 2025 Nova Lab Bustuchin — Creat de Nova Lab Bustuchin</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
