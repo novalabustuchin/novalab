@@ -1,0 +1,22 @@
+/* Container pentru videoclipuri */
+.projects-container  {
+  display: flex;             /* Folosim flex pentru centrare */
+  justify-content: center;   /* Centrează orizontal */
+  align-items: center;       /* Centrează vertical dacă containerul are înălțime */
+  margin: 200px 0;            /* Spațiu deasupra și dedesubt */
+}
+
+/* Stil pentru iframe-ul YouTube */
+.projects-container iframe {
+  width: 90%;               /* Face videoclipul mare, aproape tot containerul */
+  max-width: 1200px;        /* Limita maximă de lățime */
+  height: 600px;            /* Înălțimea fixă */
+  border: none;             /* Fără margini */
+}
+footer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    
+}
