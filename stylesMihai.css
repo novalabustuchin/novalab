@@ -97,6 +97,14 @@ header p {
   line-height: 1.6;
 }
 
+.aboutMyYoutube {
+  max-width: 1000px;
+  background:rgba(255,255,255,0.05);
+  border: 2px solid rgb(75,75,75);
+  border-radius: 15px;
+  justify-items: center;
+}
+
 /* =====================
    DECORATIE
 ===================== */
@@ -145,3 +153,4 @@ footer {
     font-size: 0.9rem;
   }
 }
+
